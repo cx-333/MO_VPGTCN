@@ -33,3 +33,11 @@ updating...
 
 # License
 This source code is licensed under the [MIT](https://github.com/zhangxiaoyu11/OmiVAE/blob/master/LICENSE) license.
+
+
+
+"""
+git add --all
+git commit -m 'amend'
+git push -u origin main
+"""
