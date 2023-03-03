@@ -1,4 +1,4 @@
-# coding:utf-8
+# _*_ coding:utf-8 _*_
 
 import torch
 import numpy as np
@@ -47,5 +47,4 @@ def load_data(batch_size:int=2) -> object:
     val_data = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
 
     return train_data, val_data
-
 
