@@ -40,8 +40,8 @@ def load_data(batch_size:int=2) -> object:
     val_sample_path = 'my_dataset/validation.txt'
     train_samples = get_samples(train_sample_path)
     validation_samples = get_samples(val_sample_path)
-    train_dataset = My_Dataset('data/train', train_samples)
-    val_dataset = My_Dataset('data/validation', validation_samples)
+    train_dataset = My_Dataset('../code/data/train', train_samples)
+    val_dataset = My_Dataset('../code/data/validation', validation_samples)
 
     train_data = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     val_data = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)

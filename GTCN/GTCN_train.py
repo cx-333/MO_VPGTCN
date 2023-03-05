@@ -12,14 +12,14 @@ import torch.nn.functional as F
 from torch import nn, Tensor
 import numpy as np
 import sys
-sys.path.append('my_dataset/')
-from my_dataset import *
-sys.path.append('data_fusion/PFA/')
+# sys.path.append('my_dataset/')
+from my_dataset.my_dataset import *
+# sys.path.append('data_fusion/PFA/')
 from PFA.PFA_main import PFA_main
 import matplotlib.pyplot as plt
 import argparse         # 调参
-sys.path.append('data_reduce_dimension/')
-from VAE.VAE import *
+# sys.path.append('data_reduce_dimension/')
+
 import math
 from torch.nn.parameter import Parameter
 import warnings
@@ -96,7 +96,7 @@ def get_GTCN_g(A:Tensor, device) -> dict:
     g['edge_weight1'], g['edge_weight2'] = A1._values(), A2
     return g
 
-def get_adj(x):
+def get_adj(x: Tensor):
     size = len(x)
     adj = torch.eye(size, size)
     i = 0
@@ -110,7 +110,7 @@ def get_adj(x):
         i += 1
     return adj
 
-def corr_adj(x):
+def corr_adj(x: Tensor):
     output = torch.corrcoef(x)
     output[output > 0.7] = 1
     output[output <= 0.7] = 0
