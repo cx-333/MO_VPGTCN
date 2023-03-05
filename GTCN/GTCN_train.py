@@ -15,7 +15,7 @@ import sys
 sys.path.append('my_dataset/')
 from my_dataset import *
 sys.path.append('data_fusion/PFA/')
-from PFA_main import PFA_main
+from PFA.PFA_main import PFA_main
 import matplotlib.pyplot as plt
 import argparse         # 调参
 sys.path.append('data_reduce_dimension/')
