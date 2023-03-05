@@ -69,5 +69,10 @@ class VAE(nn.Module):
         return mean, log_var, z, recon_x
 
 
+def vae_loss(recon_x, x, mean, log_var):
+    recon_ls = torch.nn.functional.mse_loss(recon_x, x, reduction='sum')
+    kl = - 0.5 * torch.sum(1 + log_var - mean.pow(2 - log_var.exp()))
+    return recon_ls + kl
+
 if __name__ == "__main__":
     pass
